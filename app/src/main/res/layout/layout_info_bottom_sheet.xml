@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_custom_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/padding_size_16x"
+    android:paddingVertical="@dimen/padding_size_24x"
+    >
+
+    <ImageView
+        android:id="@+id/layout_info_bottom_sheet_photo"
+        android:layout_width="@dimen/user_image_size"
+        android:layout_height="@dimen/user_image_size"
+        android:src="@drawable/ic_borrower_default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/layout_info_bottom_sheet_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/margin_size_16x"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_24x"
+        app:layout_constraintBottom_toBottomOf="@id/layout_info_bottom_sheet_photo"
+        app:layout_constraintStart_toEndOf="@id/layout_info_bottom_sheet_photo"
+        app:layout_constraintTop_toTopOf="@id/layout_info_bottom_sheet_photo"
+        tools:text="Name"
+        />
+
+    <TextView
+        android:id="@+id/layout_info_bottom_sheet_debt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_size_24x"
+        app:layout_constraintBottom_toBottomOf="@id/layout_info_bottom_sheet_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layout_info_bottom_sheet_photo"
+        tools:text="1000 kzt"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_info_bottom_sheet_dates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_size_16x"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/layout_info_bottom_sheet_photo"
+        app:layout_constraintTop_toBottomOf="@id/layout_info_bottom_sheet_photo"
+        >
+
+        <TextView
+            android:id="@+id/layout_info_bottom_sheet_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18x"
+            tools:text="date"
+            />
+
+        <TextView
+            android:id="@+id/layout_info_bottom_sheet_paid_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18x"
+            tools:text="date"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_info_bottom_sheet_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_size_16x"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/layout_info_bottom_sheet_dates"
+        app:layout_constraintTop_toBottomOf="@id/layout_info_bottom_sheet_dates"
+        >
+
+        <Button
+            android:id="@+id/layout_add_bottom_sheet_button_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_light"
+            android:text="@string/button_delete"
+            android:textColor="@color/colorPrimary"
+            />
+
+        <Button
+            android:id="@+id/layout_add_bottom_sheet_button_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16x"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_dark"
+            android:text="@string/button_approve"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

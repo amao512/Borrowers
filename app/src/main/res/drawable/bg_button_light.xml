@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ripple android:color="@color/colorSecondary"
+        tools:ignore="NewApi">
+        <item>
+            <shape >
+                <solid android:color="@color/white"/>
+                <corners android:radius="@dimen/radius_size"/>
+                <stroke android:width="@dimen/stroke_width_1x"
+                    android:color="@color/colorPrimary" />
+            </shape>
+        </item>
+    </ripple>
+</inset>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_custom_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/padding_size_16x"
+    android:paddingTop="@dimen/padding_size_24x"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_size_16x"
+        android:text="Add"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_size_24x"
+        />
+
+    <EditText
+        android:id="@+id/layout_add_bottom_sheet_edit_text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:hint="@string/edit_text_hint_name"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="@dimen/padding_size_16x"
+        android:paddingVertical="@dimen/padding_size_10x"
+        android:textColorHint="@color/gray"
+        />
+
+    <EditText
+        android:id="@+id/layout_add_bottom_sheet_edit_text_debt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_size_10x"
+        android:background="@drawable/bg_edit_text"
+        android:hint="@string/edit_text_hint_debt"
+        android:inputType="number"
+        android:paddingHorizontal="@dimen/padding_size_16x"
+        android:paddingVertical="@dimen/padding_size_10x"
+        android:textColorHint="@color/gray"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_size_16x"
+        android:layout_marginBottom="@dimen/margin_size_24x"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/layout_add_bottom_sheet_button_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_light"
+            android:text="@string/button_cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            />
+
+        <Button
+            android:id="@+id/layout_add_bottom_sheet_button_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_16x"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_dark"
+            android:text="@string/button_approve"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+</LinearLayout>

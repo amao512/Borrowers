@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_size">60dp</dimen>
+    <dimen name="app_bar_height_size">200dp</dimen>
+    <dimen name="recycler_view_padding_bottom_size">60dp</dimen>
+    <dimen name="user_image_size">50dp</dimen>
+    <dimen name="dialog_borrower_photo_size">100dp</dimen>
+
+    <dimen name="radius_size">16dp</dimen>
+    <dimen name="custom_item_radius_size">20dp</dimen>
+    <dimen name="stroke_width_1x">1dp</dimen>
+
+    <dimen name="margin_size_16x">16dp</dimen>
+    <dimen name="margin_size_10x">10dp</dimen>
+    <dimen name="margin_size_24x">24dp</dimen>
+
+    <dimen name="padding_size_16x">16dp</dimen>
+    <dimen name="padding_size_5x">5dp</dimen>
+    <dimen name="padding_size_24x">24dp</dimen>
+    <dimen name="padding_size_10x">10dp</dimen>
+
+    <dimen name="text_size_18x">18sp</dimen>
+    <dimen name="text_size_24x">24sp</dimen>
+</resources>
