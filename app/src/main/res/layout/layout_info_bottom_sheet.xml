@@ -48,14 +48,20 @@
         />
 
     <LinearLayout
-        android:id="@+id/layout_info_bottom_sheet_dates"
+        android:id="@+id/layout_info_bottom_sheet_dates_off"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/margin_size_16x"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@id/layout_info_bottom_sheet_photo"
         app:layout_constraintTop_toBottomOf="@id/layout_info_bottom_sheet_photo"
         >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_money_off"
+            />
 
         <TextView
             android:id="@+id/layout_info_bottom_sheet_date"
@@ -66,6 +72,20 @@
             tools:text="date"
             />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_info_bottom_sheet_dates_on"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_info_bottom_sheet_dates_off">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_attach_money"
+            />
+
         <TextView
             android:id="@+id/layout_info_bottom_sheet_paid_date"
             android:layout_width="wrap_content"
@@ -74,7 +94,6 @@
             android:textSize="@dimen/text_size_18x"
             tools:text="date"
             />
-
     </LinearLayout>
 
     <LinearLayout
@@ -84,8 +103,8 @@
         android:layout_marginTop="@dimen/margin_size_16x"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/layout_info_bottom_sheet_dates"
-        app:layout_constraintTop_toBottomOf="@id/layout_info_bottom_sheet_dates"
+        app:layout_constraintStart_toStartOf="@id/layout_info_bottom_sheet_dates_on"
+        app:layout_constraintTop_toBottomOf="@id/layout_info_bottom_sheet_dates_on"
         >
 
         <Button

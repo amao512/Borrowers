@@ -12,15 +12,15 @@ import com.aslnstbk.borrowers.main.presentation.viewModel.MainViewModel
 import com.aslnstbk.borrowers.utils.CalendarParser
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
-private const val DATE_TEXT_FORMAT = "Взял - %s"
-private const val PAID_DATE_TEXT_FORMAT = "Вернул - %s"
-
 class InfoBottomSheetDialog(
     private val mainViewModel: MainViewModel,
     private val calendarParser: CalendarParser
 ) {
 
     private lateinit var bottomSheetDialog: BottomSheetDialog
+
+    private lateinit var paidDateView: View
+    private lateinit var notPaidDateView: View
 
     private lateinit var nameTextView: TextView
     private lateinit var dateTextView: TextView
@@ -52,6 +52,8 @@ class InfoBottomSheetDialog(
         view: View,
         borrower: Borrower
     ){
+        paidDateView = view.findViewById(R.id.layout_info_bottom_sheet_dates_off)
+        notPaidDateView = view.findViewById(R.id.layout_info_bottom_sheet_dates_on)
         nameTextView = view.findViewById(R.id.layout_info_bottom_sheet_name)
         dateTextView = view.findViewById(R.id.layout_info_bottom_sheet_date)
         paidTextView = view.findViewById(R.id.layout_info_bottom_sheet_paid_date)
@@ -60,14 +62,16 @@ class InfoBottomSheetDialog(
         approveButton = view.findViewById(R.id.layout_add_bottom_sheet_button_add)
 
         nameTextView.text = borrower.fullName
-        dateTextView.text = DATE_TEXT_FORMAT.format(calendarParser.getParsedDate(borrower.date))
+        dateTextView.text = calendarParser.getParsedDate(borrower.date)
         debtTextView.text = DEBT_TEXT_FORMAT.format(borrower.debt)
+        notPaidDateView.visibility = View.GONE
 
         if(borrower.isPaid){
-            paidTextView.text = PAID_DATE_TEXT_FORMAT.format(calendarParser.getParsedDate(borrower.paidDate))
+            paidTextView.text = calendarParser.getParsedDate(borrower.paidDate)
             debtTextView.setTextColor(ContextCompat.getColor(context, R.color.green))
             debtTextView.text = PAID_DEBT_TEXT_FORMAT.format(borrower.debt)
             approveButton.visibility = View.GONE
+            notPaidDateView.visibility = View.VISIBLE
         }
     }
 
