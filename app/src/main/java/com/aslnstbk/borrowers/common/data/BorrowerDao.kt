@@ -2,7 +2,7 @@ package com.aslnstbk.borrowers.common.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.aslnstbk.borrowers.common.data.Borrower
+import com.aslnstbk.borrowers.common.data.models.Borrower
 
 @Dao
 interface BorrowerDao {
@@ -17,8 +17,8 @@ interface BorrowerDao {
     suspend fun insert(borrower: Borrower)
 
     @Update
-    fun update(borrower: Borrower)
+    suspend fun update(borrower: Borrower)
 
     @Delete
-    fun delete(borrower: Borrower)
+    suspend fun delete(borrower: Borrower)
 }

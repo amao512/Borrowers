@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
 import com.aslnstbk.borrowers.R
-import com.aslnstbk.borrowers.common.data.Borrower
 import com.aslnstbk.borrowers.common.data.BorrowerClickListener
+import com.aslnstbk.borrowers.common.data.models.Borrower
 import com.aslnstbk.borrowers.common.view.BorrowersAdapter
 import com.aslnstbk.borrowers.common.view.DEBT_TEXT_FORMAT
 import com.aslnstbk.borrowers.common.view.InfoBottomSheetDialog
@@ -15,6 +15,7 @@ import com.aslnstbk.borrowers.history.presentation.HistoryActivityRouter
 import com.aslnstbk.borrowers.main.presentation.view.AboutBottomSheetDialog
 import com.aslnstbk.borrowers.main.presentation.view.AddBottomSheetDialog
 import com.aslnstbk.borrowers.main.presentation.viewModel.MainViewModel
+import com.aslnstbk.borrowers.utils.CalendarParser
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.koin.android.ext.android.inject
@@ -26,11 +27,14 @@ class MainActivity : AppCompatActivity(), BorrowerClickListener {
     private val historyActivityRouter: HistoryActivityRouter by inject()
     private val addBottomSheetDialog: AddBottomSheetDialog by inject()
     private val aboutBottomSheetDialog: AboutBottomSheetDialog by inject()
-
     private val infoBottomSheetDialog: InfoBottomSheetDialog by inject()
+    private val calendarParser: CalendarParser by inject()
 
     private val borrowersAdapter: BorrowersAdapter by lazy {
-        BorrowersAdapter(borrowerClickListener = this)
+        BorrowersAdapter(
+            borrowerClickListener = this,
+            calendarParser = calendarParser
+        )
     }
 
     private lateinit var toolbar: Toolbar
@@ -96,15 +100,6 @@ class MainActivity : AppCompatActivity(), BorrowerClickListener {
         borrowersAdapter.setList(notPaidList)
     }
 
-    private fun setAllDebts(list: List<Borrower>) {
-        var allDebts = 0
-        list.map {
-            allDebts += it.debt
-        }
-
-        collapsingToolbarLayout.title = DEBT_TEXT_FORMAT.format(allDebts.toString())
-    }
-
     private fun getNotPaidBorrowerList(list: List<Borrower>): List<Borrower> {
         val notPaidList: MutableList<Borrower> = mutableListOf()
         list.map {
@@ -114,5 +109,14 @@ class MainActivity : AppCompatActivity(), BorrowerClickListener {
         }
 
         return notPaidList
+    }
+
+    private fun setAllDebts(list: List<Borrower>) {
+        var allDebts = 0
+        list.map {
+            allDebts += it.debt
+        }
+
+        collapsingToolbarLayout.title = DEBT_TEXT_FORMAT.format(allDebts.toString())
     }
 }

@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aslnstbk.borrowers.R
 import com.aslnstbk.borrowers.common.data.BorrowerClickListener
-import com.aslnstbk.borrowers.common.data.Borrower
+import com.aslnstbk.borrowers.common.data.models.Borrower
+import com.aslnstbk.borrowers.utils.CalendarParser
 
 class BorrowersAdapter(
-    private val borrowerClickListener: BorrowerClickListener
+    private val borrowerClickListener: BorrowerClickListener,
+    private val calendarParser: CalendarParser
 ) : RecyclerView.Adapter<BorrowerViewHolder>() {
 
     private val borrowersList: MutableList<Borrower> = mutableListOf()
@@ -20,7 +22,8 @@ class BorrowersAdapter(
                 parent,
                 false
             ),
-            borrowerClickListener
+            borrowerClickListener,
+            calendarParser
         )
     }
 

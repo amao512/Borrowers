@@ -1,6 +1,7 @@
 package com.aslnstbk.borrowers.common.data
 
 import androidx.lifecycle.LiveData
+import com.aslnstbk.borrowers.common.data.models.Borrower
 import com.aslnstbk.borrowers.common.domain.BorrowerRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -10,7 +11,7 @@ class DefaultBorrowerRepository(
     private val appDatabase: AppDatabase
 ) : BorrowerRepository {
 
-    override fun getAllBorrowers(): LiveData<List<Borrower>> = appDatabase.borrowerDao().getAllBorrowers()
+    override fun getAllBorrowers(): LiveData<List<Borrower>>  = appDatabase.borrowerDao().getAllBorrowers()
 
     override fun addBorrower(borrower: Borrower) {
         CoroutineScope(Dispatchers.IO).launch {

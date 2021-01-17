@@ -55,7 +55,7 @@
         android:paddingBottom="@dimen/recycler_view_padding_bottom_size"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/borrower_item"
+        tools:listitem="@layout/date_item"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

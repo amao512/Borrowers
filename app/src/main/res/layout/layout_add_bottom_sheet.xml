@@ -27,6 +27,7 @@
         android:inputType="textPersonName"
         android:paddingHorizontal="@dimen/padding_size_16x"
         android:paddingVertical="@dimen/padding_size_10x"
+        android:textColor="@color/colorPrimary"
         android:textColorHint="@color/gray"
         />
 
@@ -40,6 +41,7 @@
         android:inputType="number"
         android:paddingHorizontal="@dimen/padding_size_16x"
         android:paddingVertical="@dimen/padding_size_10x"
+        android:textColor="@color/colorPrimary"
         android:textColorHint="@color/gray"
         />
 

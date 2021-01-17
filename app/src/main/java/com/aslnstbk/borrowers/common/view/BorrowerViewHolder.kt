@@ -5,15 +5,17 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aslnstbk.borrowers.R
+import com.aslnstbk.borrowers.common.data.models.Borrower
 import com.aslnstbk.borrowers.common.data.BorrowerClickListener
-import com.aslnstbk.borrowers.common.data.Borrower
+import com.aslnstbk.borrowers.utils.CalendarParser
 
 const val DEBT_TEXT_FORMAT = "- %s тг"
 const val PAID_DEBT_TEXT_FORMAT = "+ %s тг"
 
 class BorrowerViewHolder(
     itemView: View,
-    private val borrowerClickListener: BorrowerClickListener
+    private val borrowerClickListener: BorrowerClickListener,
+    private val calendarParser: CalendarParser
 ) : RecyclerView.ViewHolder(itemView) {
 
     private val borrowerNameTextView: TextView = itemView.findViewById(R.id.borrower_item_borrower_name)
@@ -22,7 +24,7 @@ class BorrowerViewHolder(
 
     fun onBind(borrower: Borrower){
         borrowerNameTextView.text = borrower.fullName
-        dateTextView.text = borrower.date
+        dateTextView.text = calendarParser.getParsedDate(borrower.date)
         debtTextView.text = DEBT_TEXT_FORMAT.format(borrower.debt)
 
         if(borrower.isPaid){

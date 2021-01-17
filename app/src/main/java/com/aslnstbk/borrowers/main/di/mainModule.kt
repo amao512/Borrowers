@@ -9,7 +9,8 @@ import org.koin.dsl.module
 val mainModule = module {
     viewModel {
         MainViewModel(
-            borrowerRepository = get()
+            borrowerRepository = get(),
+            calendarParser = get()
         )
     }
 

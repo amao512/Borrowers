@@ -4,6 +4,7 @@ import com.aslnstbk.borrowers.common.data.AppDatabase
 import com.aslnstbk.borrowers.common.data.DefaultBorrowerRepository
 import com.aslnstbk.borrowers.common.domain.BorrowerRepository
 import com.aslnstbk.borrowers.common.view.InfoBottomSheetDialog
+import com.aslnstbk.borrowers.utils.CalendarParser
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -15,6 +16,10 @@ val applicationModule = module {
         )
     }
 
+    single {
+        CalendarParser()
+    }
+
     factory {
         DefaultBorrowerRepository(
             appDatabase = get()
@@ -23,7 +28,8 @@ val applicationModule = module {
 
     factory {
         InfoBottomSheetDialog(
-            mainViewModel = get()
+            mainViewModel = get(),
+            calendarParser = get()
         )
     }
 }

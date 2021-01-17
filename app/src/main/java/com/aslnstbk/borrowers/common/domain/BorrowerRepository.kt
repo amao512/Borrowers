@@ -1,7 +1,7 @@
 package com.aslnstbk.borrowers.common.domain
 
 import androidx.lifecycle.LiveData
-import com.aslnstbk.borrowers.common.data.Borrower
+import com.aslnstbk.borrowers.common.data.models.Borrower
 
 interface BorrowerRepository {
 

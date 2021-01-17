@@ -7,15 +7,17 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.aslnstbk.borrowers.R
-import com.aslnstbk.borrowers.common.data.Borrower
+import com.aslnstbk.borrowers.common.data.models.Borrower
 import com.aslnstbk.borrowers.main.presentation.viewModel.MainViewModel
+import com.aslnstbk.borrowers.utils.CalendarParser
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 private const val DATE_TEXT_FORMAT = "Взял - %s"
 private const val PAID_DATE_TEXT_FORMAT = "Вернул - %s"
 
 class InfoBottomSheetDialog(
-    private val mainViewModel: MainViewModel
+    private val mainViewModel: MainViewModel,
+    private val calendarParser: CalendarParser
 ) {
 
     private lateinit var bottomSheetDialog: BottomSheetDialog
@@ -58,11 +60,11 @@ class InfoBottomSheetDialog(
         approveButton = view.findViewById(R.id.layout_add_bottom_sheet_button_add)
 
         nameTextView.text = borrower.fullName
-        dateTextView.text = DATE_TEXT_FORMAT.format(borrower.date)
+        dateTextView.text = DATE_TEXT_FORMAT.format(calendarParser.getParsedDate(borrower.date))
         debtTextView.text = DEBT_TEXT_FORMAT.format(borrower.debt)
 
         if(borrower.isPaid){
-            paidTextView.text = PAID_DATE_TEXT_FORMAT.format(borrower.paidDate)
+            paidTextView.text = PAID_DATE_TEXT_FORMAT.format(calendarParser.getParsedDate(borrower.paidDate))
             debtTextView.setTextColor(ContextCompat.getColor(context, R.color.green))
             debtTextView.text = PAID_DEBT_TEXT_FORMAT.format(borrower.debt)
             approveButton.visibility = View.GONE

@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
 import com.aslnstbk.borrowers.R
-import com.aslnstbk.borrowers.common.data.Borrower
+import com.aslnstbk.borrowers.common.data.models.Borrower
 import com.aslnstbk.borrowers.common.data.BorrowerClickListener
 import com.aslnstbk.borrowers.common.view.BorrowersAdapter
 import com.aslnstbk.borrowers.common.view.InfoBottomSheetDialog
 import com.aslnstbk.borrowers.history.presentation.viewModel.HistoryViewModel
+import com.aslnstbk.borrowers.utils.CalendarParser
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -17,10 +18,12 @@ class HistoryActivity : AppCompatActivity(), BorrowerClickListener {
 
     private val historyViewModel: HistoryViewModel by viewModel()
     private val infoBottomSheetDialog: InfoBottomSheetDialog by inject()
+    private val calendarParser: CalendarParser by inject()
 
     private val historyAdapter: BorrowersAdapter by lazy {
         BorrowersAdapter(
-            borrowerClickListener = this
+            borrowerClickListener = this,
+            calendarParser = calendarParser
         )
     }
 
