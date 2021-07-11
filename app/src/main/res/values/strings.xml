@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Borrowers</string>
+
     <string name="menu_item_history">History</string>
     <string name="edit_text_hint_name">Name</string>
     <string name="edit_text_hint_debt">Debt</string>
@@ -10,4 +11,6 @@
     <string name="about_dev_name">Asylzhan Seytbek</string>
     <string name="about_email">Email:</string>
     <string name="about_dev_email">asyl.zed.han@gmail.com</string>
+
+    <string name="history">History</string>
 </resources>

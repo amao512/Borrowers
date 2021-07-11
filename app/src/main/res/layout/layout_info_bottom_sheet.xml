@@ -71,14 +71,14 @@
             android:textSize="@dimen/text_size_18x"
             tools:text="date"
             />
-
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_info_bottom_sheet_dates_on"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/layout_info_bottom_sheet_dates_off">
+        app:layout_constraintTop_toBottomOf="@id/layout_info_bottom_sheet_dates_off"
+        >
 
         <ImageView
             android:layout_width="wrap_content"
@@ -127,7 +127,6 @@
             android:text="@string/button_approve"
             android:textColor="@color/white"
             />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

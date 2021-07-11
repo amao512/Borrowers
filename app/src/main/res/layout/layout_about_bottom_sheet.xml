@@ -52,7 +52,6 @@
             android:textSize="@dimen/text_size_18x"
             android:textColor="@color/gray"
             />
-
     </LinearLayout>
 
     <LinearLayout
@@ -79,6 +78,6 @@
             android:textColor="@color/gray"
             android:textSize="@dimen/text_size_18x"
             />
-
     </LinearLayout>
+
 </LinearLayout>

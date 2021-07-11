@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="History"
+            android:text="@string/history"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_24x"
             />
@@ -39,5 +39,4 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/borrower_item"
         />
-
 </LinearLayout>

@@ -10,6 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.lang.Exception
 
 private const val VERSION_TEXT_FORMAT = "Version %s"
+private const val EMPTY_STRING = ""
 
 class AboutBottomSheetDialog {
 
@@ -32,6 +33,6 @@ class AboutBottomSheetDialog {
 
         info.versionName
     } catch (e: Exception){
-        e.localizedMessage
+        e.localizedMessage ?: EMPTY_STRING
     }
 }
